@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validating Forms JS</title>
+    <script defer src="index.js" ></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form class="container" novalidate>
+      <label for="mail">Email Address: </label>
+      <div class="wrap">
+          <input type="email" name="mail" id="mail" minlength="10" required>
+          <span class="error" aria-live="polite"></span>
+      </div>
+      <label for="country">Country: </label>
+      <div class="wrap">
+          <input type="text" name="country" id="country"
+           pattern="^[a-zA-Z]+" minlength="3" required>
+          <span class="error" aria-live="polite"></span>
+      </div>
+      <label for="zip">Zip code:</label>
+      <div class="wrap">
+          <input type="text"  pattern="^[a-zA-Z0-9]{6}" name="zip" id="zip">
+          <span class="error"></span>
+      </div>
+      <label for="passwd">Password</label>
+      <div class="wrap">
+          <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" 
+          name="passwd" id="passwd">
+          <span class="error"></span>
+      </div>
+      <label for="passwdConfirmation">Password confirmation </label>
+      <div class="wrap">
+          <input type="password"  
+          name="passwdConfirmation" id="passwdConfirmation">
+          <span class="error"></span>
+      </div>
+      <button>Submit</button>
+    </form>
+      
+</body>
+</html>
